@@ -1,0 +1,8 @@
+//stopword list provided
+for install dependencies
+run pipenv shell
+run pipenv install
+
+run main.py
+
+see in task bar

@@ -1,0 +1,69 @@
+1)The DHCP messages are sent via UDP.
+2)The ethernet address of my host is 0050.0FA8.6301 , 0050.0FA8.6302.
+3)DHCP message type and request includes a server identifier field.
+4)The purpose of transaction ID is different so that the host can differentiate between different requests made by the user.
+5)
+Discover: 0.0.0.0  - 255.255.255.255
+Offer: 192.168.1.1 - 255.255.255.255
+Request: 0.0.0.0   - 255.255.255.255
+ACK:192.168.1.1    - 255.255.255.255
+6)192.168.10.2
+7)My client offered 192.168.1.101 by DHCP server.The offer message contains DHCP address offered by server
+8)The value that indicates there is no relay agent is 0.0.0.0 and I also have a value for the relay agent of 0.0.0.0 indicating not have a relay agent.
+9)The purpose of lease time is to tell the client how long they can use the specific IP address assigned by the server before they will have to be assigned a new one.
+The lease time --
+
+--------------------------------------------------------------------------------------------------------------
+
+1)
+Name:    nu.edu.pk
+Address:  203.124.43.201
+Aliases:  www.nu.edu.pk
+
+2)
+nslookup -type=NS www.cam.ac.uk
+Server:  UnKnown
+Address:  192.168.1.1
+
+cam.ac.uk
+        primary name server = primary.dns.cam.ac.uk
+        responsible mail addr = hostmaster.cam.ac.uk
+        serial  = 1583938688
+        refresh = 1800 (30 mins)
+        retry   = 900 (15 mins)
+        expire  = 604800 (7 days)
+        default TTL = 3600 (1 hour)
+
+3)
+nslookup www.cam.ac.uk mail.yahoo.com
+DNS request timed out.
+    timeout was 2 seconds.
+Server:  UnKnown
+Address:  216.115.100.124
+
+DNS request timed out.
+    timeout was 2 seconds.
+DNS request timed out.
+    timeout was 2 seconds.
+DNS request timed out.
+    timeout was 2 seconds.
+DNS request timed out.
+    timeout was 2 seconds.
+*** Request to UnKnown timed-out
+
+
+4)
+ipconfig /flushdns
+
+Windows IP Configuration
+
+Successfully flushed the DNS Resolver Cache.
+
+----------------------------------------------------------------------
+1)They are sent over UDP
+2)source 50133 & destination port 53
+3)ipconfig -all 192.168.1.106(Preferred)( IP address of one of my local DNS servers)
+4)Type A Standard Query and doesnot contain any answers.
+5)The response message contained one answer to query.
+  Which sites address [64.170.98.30].
+  It also provided 6 authoritative nameservers and 11 other responses containing additional information.
